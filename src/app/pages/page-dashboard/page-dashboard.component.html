@@ -1,0 +1,71 @@
+<div id="sect1" class="main-container">
+    <div class="row min-hight-600 no-flex-wrap">
+        <div class="card col-md-2 mr-2" [style.background]="'url(/assets/wallpaper3.jpg)'" style="height: 778px;left: 15px;">
+            <div class="col pl-0 pr-0"style="margin-top: 20px;">
+                    <img src="assets/managerII.png" width="260px" height="120px">
+                <div style="margin-top: 20px;">
+                    <app-menu></app-menu>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-10 pl-0 pr-0 background-blue border-none">
+            <div class="col pl-0 pr-0 d-flex flex-column justify-content-between">
+                <div class="card p-3 min-hight-80 mb-2" [style.background]="'url(/assets/wallpaper2.jpg)'">
+                    <app-header></app-header>
+                </div>
+                <div class="card mb-2" [style.background]="'url(/assets/wallpaper.jpg)'" style="height: 640px">
+                    <app-loader></app-loader>
+                    
+                    
+                    
+                    <router-outlet></router-outlet>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        
+        <div class="card m-1">
+            <div class="footer-top">
+                <div [style.background]="'url(/assets/wallpaper.jpg)'">
+
+                    <div class="row text-center p-0">
+                        <div class="col-md-4 text-center border-right" style="visibility: visible; animation-name: fadeInUp;">
+                            <h5>Tunisie Nouvelles Technologies <img class="logo-footer" src="assets/tnt.png" alt="logo-footer" data-at2x="assets/img/logo.png" width="74" height="84"></h5>
+                            <p>
+                                Société de développement informatique, spécialisée dans le développement de logiciels spécifiques et de logiciels métiers clés en main.
+                            </p>
+                        </div>
+                        <div class="col-md-5 text-center border-right" style="visibility: visible; animation-name: fadeInDown;">
+                            <h5 class="m-3">Contact</h5>
+                            <p><i class="fas fa-map-marker-alt"></i> Imm. City Center, Centre Urbain Nord Tunis - Tunisie</p>
+                            <p><i class="fas fa-phone"></i> Phone: (+216) 72 00 00 00</p>
+                        </div>
+                        <div class="col-md-3 text-center" style="visibility: visible; animation-name: fadeInUp;">
+                            <h5 class="m-3">Contact us</h5>
+                            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:admin@tnt.com">admin@tnt.com.tn</a></p>
+                            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/company/tunisie-nouvelles-technologies/mycompany/">Tunisie Nouvelles Technologies</a></p>
+                            <p><i class="fab fa-internet-explorer"></i> Site Web: <a href="https://www.tnt.com.tn/">www.tnt.com.tn</a></p>
+                        </div>
+                        <div class="footer-lower">
+                            <div class="media-container-row">
+                                <div class="col-sm-12">
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="media-container-row mbr-white">
+                                <div class="col-sm-12 copyright">
+                                    <p class="mbr-text text-center">
+                                        © Copyright 2022 - All Rights Reserved To TNT
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+        </div>
+</div>

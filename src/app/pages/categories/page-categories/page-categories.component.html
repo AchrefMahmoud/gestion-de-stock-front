@@ -1,0 +1,116 @@
+<div class="row">
+
+    <div class="row m-3">
+        <div class="col-md-9 p-0">
+            <h1>Liste des categories</h1>
+        </div>
+        <div class="col-md-3 text-right">
+            <app-boutton-action
+                (clickEvent)="nouvelleCategory()"
+                ></app-boutton-action>
+        </div>
+    </div>
+    <div class="row m-3 blur" style="max-height: 430px; overflow-y: scroll;padding-left: 20px">
+        
+        <div class="row custom-border mb-3 p-3" *ngFor="let cat of listCategories">
+            <div class="col-md-3 border-right">
+                {{cat.codeCategory}}
+            </div>
+            <div class="col-md-5 border-right">
+                {{cat.designation}}
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn btn-link btn-primary" (click)="modifierCategory(cat.id)">
+                            <i class="fa-solid fa-pen-to-square"></i>&nbsp; Modifier
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn btn-link btn-danger text-danger" data-toggle="modal" data-target="#modalDeleteCat" 
+                                    (click)="selectCatPourSupprimer(cat.id)">
+                            <i class="fa-solid fa-trash-can"></i>&nbsp; Supprimer</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn btn-link btn-primary" data-toggle="modal" data-target="#modalDetail">
+                            <i class="fa-solid fa-table-list"></i>&nbsp; Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3" *ngIf="listCategories.length > 0">
+        <div class="col-md-12 text-center">
+            <app-pagination></app-pagination>
+        </div>
+</div>
+
+<!------ Modal ------>
+<div class="modal fade" id="modalDeleteCat" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Confirmation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Etes vous-sur vouloir supprimer cette categorie ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="annulerSuppressionCat()">
+            <i class="fa-solid fa-ban"></i> Annuler</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="confirmerEtSupprimerCat()">
+            <i class="fa-solid fa-trash-can"></i> Supprimer</button>
+        </div>
+      </div>
+    </div>
+</div>
+  </div>
+
+
+  <!------ Modal Detail------>
+  <div class="modal fade" id="modalDetail" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header" style=" margin-left: 120px;">
+          <h5 class="modal-title" id="staticBackdropLabel">Les détails de catégorie </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+            <div class="row">
+                <div class="mb-3 mt-3 text-center">
+                    <img src="assets/product.png" class="rounded-circle" width="200px" height="200px"/>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 15px;">
+
+                <div class="card col-md-8" style="width: 435px;">
+                    <table class="table">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Code de catégorie</th>
+                            <th></th>
+                          </tr>
+                          <tr>
+                            <th scope="row">Désignation</th>
+                            <th></th>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <div>    
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <i class="far fa-window-close"></i>&nbsp; Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>

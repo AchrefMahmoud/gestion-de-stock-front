@@ -1,0 +1,54 @@
+<div class="container my-container">
+    <div class="box" style="top: -70px;">
+      <div class="p-0 m-0">
+        <img style="padding-top: 20px;" src="assets/sedeconnecte.png" width="465px" height="150px">
+      </div>
+      <div class="card-body" style="padding-top: 0px;">
+<!--        <div class="alert alert-danger m-3" *ngIf="errorsMsg.length > 0">
+          <div *ngFor="let msg of errorsMsg">
+            <span ><i class="fas fa-exclamation-circle"></i>&nbsp;{{msg}}</span>
+          </div>
+        </div>  -->
+        <div class="mb-3 m-3">
+          <input type="text" class="form-control" placeholder="Nom" [(ngModel)]="entrepriseDto.nom">
+        </div>
+        <div class="mb-3 m-3">
+          <input type="text" class="form-control" placeholder="Code fiscal" [(ngModel)]="entrepriseDto.codeFiscal">
+        </div><div class="mb-3 m-3">
+          <input type="email" class="form-control" placeholder="E-mail" [(ngModel)]="entrepriseDto.mail">
+        </div><div class="mb-3 m-3">
+          <input type="text" class="form-control" placeholder="Adresse" [(ngModel)]="entrepriseDto.adresse">
+        </div><div class="mb-3 m-3">
+          <input type="text" class="form-control" placeholder="Ville" [(ngModel)]="entrepriseDto.ville">
+        </div><div class="mb-3 m-3">
+          <input type="text" class="form-control" placeholder="Code postale" [(ngModel)]="entrepriseDto.codePostale">
+        </div><div class="mb-3 m-3">
+          <input type="text" class="form-control" placeholder="Pays" [(ngModel)]="entrepriseDto.pays">
+        </div><div class="mb-3 m-3">
+          <textarea type="password" class="form-control" placeholder="Description" [(ngModel)]="entrepriseDto.description"></textarea>
+        </div><div class="mb-3 m-3">
+          <input type="text" class="form-control" placeholder="Numero de telephone" [(ngModel)]="entrepriseDto.numTel">
+        </div>
+        <div class="mb-3 d-flex justify-content-center">
+          <a style="color:#FFFFFF"[routerLink]="['/login']" class="btn btn-link">Se connecter</a>
+          <button type="button" class="btn btn-outline-light" (click)="inscrire()">
+            <i class="fa-solid fa-check"></i>&nbsp; S'inscrire
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+    
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://www.tnt.com.tn/">tnt.com.tn</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  </div>

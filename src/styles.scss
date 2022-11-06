@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #4292cc !important;
+    height: 650 px;  
+    background-image: url("../src/assets/people.png.jpg");  
+    background-size: 100%;  
+    background-size: cover
+}
+
+
+.background-blue{
+    background-color: #4292cc !important;
+    height: 650 px;  
+    background-image: url("../src/assets/people.png.jpg");  
+    background-size: 100%;  
+    background-size: cover
+}
+
+.border-none{
+    border: none !important;
+}
+
+.min-hight-80{
+    min-height: 130px;
+}
+
+.border-right{
+    border-right: solid 3px #4292cc;
+}
+
+.custom-border{ 
+    border: solid #4292cc;
+    border-radius: 5px;
+}
+
+.blue-color{
+    color: #037bfe;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.loader-overlay {
+    position: absolute;
+    width: 100%;
+    z-index: 500000;
+    top: 0;
+}
+
+.loader {
+    height: 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #FFF;
+}
+
+.loader:before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 10px;
+    background-color: #007bff;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        left: -200px;
+        width: 30%;
+    }
+    50% {
+        width: 30%;
+    }
+    70% {
+        width: 70%;
+    }
+    80% {
+        left: 50%;
+    }
+    95% {
+        left: 120%;
+    }
+    to {
+        left: 100%
+    }
+}
+
+#posts {
+    margin: 20px 0;
+    list-style-type: none;
+}
+
+#about {
+    margin: 20px;
+}
+
+#alerts {
+    margin: 20px 0;
+    color: red;
+}
+
+.blur {
+    background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1
+    backdrop-filter: blur(2px); // This be the blur
+  }

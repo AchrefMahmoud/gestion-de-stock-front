@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-10">
+        <div class="input-group flex-nowrap">
+            <input type="text" class="form-control" placeholder="Rechercher" aria-label="Username" aria-describedby="addon-wrapping">
+            <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+          </div>
+    </div>
+    <div class="col-md-2">
+        <div class="row">
+            <div class="col-md-9 text-center">
+                <span>{{connectedUser.nom}}&nbsp;{{connectedUser.prenom}}</span>
+            </div>
+
+            <div class="col-md-3">
+                <a href="javascript:void(0);" [routerLink]="['/profil']">
+                    <img [src]="connectedUser.photo ? connectedUser.photo : 'assets/profil.png'" class="rounded-circle" width="45px" height="34px">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+export { ArticlesService } from './services/articles.service';
+export { ApiService } from './services/api.service';
+export { CategoriesService } from './services/categories.service';
+export { ClientsService } from './services/clients.service';
+export { CommandesclientsService } from './services/commandesclients.service';
+export { CommandeFournisseursService } from './services/commande-fournisseurs.service';
+export { EntreprisesService } from './services/entreprises.service';
+export { FournisseursService } from './services/fournisseurs.service';
+export { MvtstkService } from './services/mvtstk.service';
+export { PhotosService } from './services/photos.service';
+export { UtilisateursService } from './services/utilisateurs.service';
+export { VentesService } from './services/ventes.service';

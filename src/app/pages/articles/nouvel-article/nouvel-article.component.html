@@ -1,0 +1,64 @@
+<div class="col mb-3">
+    <div class="col-md-11,4 p-4 mb-3">
+      <button (click)="fileInput.click()" style="background-color: transparent; border: none;">
+        <img [src]="imgUrl" class="rounded-circle" width="200px" height="200px">
+        <input hidden type="file" #fileInput (change)="onFileInput(fileInput.files)">
+      </button>
+    </div>
+    <hr>
+    <div class="col-md-11,4 p-4">
+        <div class="col-md-10 mb-3">
+            <h2><i class="fa-solid fa-circle-info blue-color"></i>&nbsp; Information de l'article</h2>
+        </div>
+    <div class="col-md-12">
+      <div class="alert alert-danger" *ngIf="errorMsg.length > 0">
+        <div *ngFor="let msg of errorMsg">
+          <span >{{msg}}</span>
+        </div>
+      </div>
+        <form>
+            <div class="row mb-3">
+                <div class="col">
+                  <input type="text" class="form-control" name="codearticle" placeholder="Code article" [(ngModel)]="articleDto.codeArticle">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" name="designetion" placeholder="Designetion" [(ngModel)]="articleDto.designation">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                  <input type="text" class="form-control" name="prixunitaireht" placeholder="Prix unitaire HT" (input)="calculerTtc()" 
+                        [(ngModel)]="articleDto.prixUnitaireHt">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" name="tauxtva" placeholder="Taux TVA" (input)="calculerTtc()" 
+                        [(ngModel)]="articleDto.tauxTVA">
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col">
+                  <input type="text mb-3" class="form-control" name="prixunitairettc" placeholder="Prix Unitaire TTC" [(ngModel)]="articleDto.prixUnitaireTtc">
+                </div>
+                <div class="col mb-3">
+                  <select class="from-control" name="cat" [(ngModel)]="categoryDto.id">
+                    <option>Selectionner une categorie</option>
+                    <option *ngFor="let cat of listCategorie" [value]="cat.id">{{ cat.codeCategory }} || {{ cat.designation }}</option>
+                  </select>
+                </div>
+            </div>  
+        </form>
+    </div>
+    </div>
+
+<div class="col-md-12 text-center mt-2" (click)="cancelClick()">
+    <button class="btn btn-danger">
+        <i class="fa-solid fa-ban"></i>&nbsp;
+        Annuler
+    </button>
+    &nbsp;
+    <button class="btn btn-primary" (click)="enregistrerArticle()">
+        <i class="fa-solid fa-save"></i>&nbsp;
+        Enregistrer
+    </button>
+    </div>
+</div>

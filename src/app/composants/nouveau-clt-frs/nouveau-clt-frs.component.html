@@ -1,0 +1,72 @@
+<div class="col mb-3">
+    <div class="col-md-11,4 p-4 mb-3 text-center">
+        <img [src]="clientFournisseur.photo ? clientFournisseur.photo : 'assets/nouvel-fournisseur.png'" width="250px" height="200px">
+    </div>
+    <hr>
+    <div class="col-md-11,4 p-4">
+        <div class="col-md-12 mb-3">
+            <h2><i class="fa-solid fa-circle-info blue-color"></i>&nbsp; Information du {{origin}}</h2>
+        </div>
+        <div class="alert alert-danger" *ngIf="errorMsg.length > 0">
+            <div *ngFor="let msg of errorMsg">
+                {{ msg }}
+            </div>
+        </div>
+    <div class="col-md-11,4">
+        <form>
+            <div class="row mb-3">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Nom"
+                  name="nom" [(ngModel)]="clientFournisseur.nom">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Adresse"
+                  name="adresse" [(ngModel)]="clientFournisseur.adresse">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Prenom"
+                  name="prenom" [(ngModel)]="clientFournisseur.prenom">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Ville"
+                  name="ville" [(ngModel)]="clientFournisseur.ville">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="email" class="form-control" placeholder="E-mail"
+                    name="email" [(ngModel)]="clientFournisseur.mail">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Code Postal"
+                    name="codepostal" [(ngModel)]="clientFournisseur.codePostale">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Telephone"
+                    name="telephone" [(ngModel)]="clientFournisseur.numTel">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Pays"
+                    name="pays" [(ngModel)]="clientFournisseur.pays">
+                </div>
+            </div>  
+        </form>
+    </div>
+    </div>
+
+<div class="col-md-12 text-center">
+    <button class="btn btn-danger" (click)="cancelClick()">
+        <i class="fa-solid fa-ban"></i>&nbsp;
+        Annuler
+    </button>
+    &nbsp;
+    <button class="btn btn-primary" (click)="enregistrer()">
+        <i class="fa-solid fa-save"></i>&nbsp;
+        Enregistrer
+    </button>
+    </div>
+</div>

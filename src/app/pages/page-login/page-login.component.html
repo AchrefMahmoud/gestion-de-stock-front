@@ -1,0 +1,38 @@
+<div class="container my-container">
+  <div class="box">
+    <div class="m-2 text-center" style="padding-top: 20px;">
+        <img src="assets/user.png" width="200px" height="120px">
+    </div>
+    <div class="card-body ">
+      <div class="alert alert-danger m-4" *ngIf="errorMessage">
+        <i class="fas fa-exclamation-circle"></i>&nbsp;{{errorMessage}}
+      </div>
+      <div class="mb-3 m-4">
+        <input type="email" class="form-control" placeholder="E-mail" [(ngModel)] = "authenticationRequest.login">
+      </div>
+      <div class="mb-3 m-4">
+        <input type="password" class="form-control" placeholder="Mot de passe" [(ngModel)] = "authenticationRequest.password">
+      </div>
+      <div class="mb-3 d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-light" (click)="login()">
+          <i class="fa-solid fa-check"></i>&nbsp; Se connecter &nbsp;
+        </button>
+      </div>
+      <div class="mb-3 m-4">
+        <p style="color:#FFFFFF;padding-left: 85px;">Vous n’avez pas de compte ?<a style="color:#FFFFFF"[routerLink]="['/inscrire']" class="btn btn-link">S'inscrire</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+    
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://www.tnt.com.tn/">tnt.com.tn</a>
+  </div>
+  <!-- Copyright -->
+</footer>

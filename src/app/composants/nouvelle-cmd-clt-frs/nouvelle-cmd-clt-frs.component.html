@@ -1,0 +1,117 @@
+<div class="col mb-3 col-md-11,4 p-4">
+    <div class="col-md-10 mb-3">
+        <h2>Nouvelle commande {{origin}}</h2>
+    </div>
+    <div class="alert alert-danger" *ngIf="errorMsg.length">
+        <div *ngFor="let msg of errorMsg">
+            <span>{{ msg }}</span>
+        </div>
+    </div>
+</div>
+    <div class="col mb-3 col-md-11,4 p-4">
+        <div class="row p-5 custom-border">
+            <div class="col-md-5 border-right">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="codeCmd" placeholder="Code Commande" [(ngModel)]="codeCommande">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Date commande">
+                    </div>
+                    <div class="mb-3">
+                        <select class="from-control" name="cltFrs" [(ngModel)]="selectedClientFournisseur">
+                            <option>
+                                Selectionner un {{ origin }}
+                            </option>
+                            <option *ngFor="let obj of listClientsFournisseurs" [ngValue]="obj">
+                                {{ obj.nom }}&nbsp;{{ obj.prenom }}    
+                            </option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-4 text border-right" *ngIf="selectedClientFournisseur.nom">
+                <div class="col">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-md-1"><i class="fa-solid fa-circle-info blue-color"></i></div>
+                            <div class="col-md-11  blue-color">{{ selectedClientFournisseur.nom }}</div>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-md-1"><i class="fa-solid fa-circle-info blue-color"></i></div>
+                            <div class="col-md-11 blue-color">{{ selectedClientFournisseur.prenom }}</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-1"><i class="fa-solid fa-phone blue-color"></i></div>
+                            <div class="col-md-11 blue-color">{{ selectedClientFournisseur.numTel }}</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-1"><i class="fa-solid fa-hourglass-start blue-color"></i></div>
+                            <div class="col-md-11 blue-color">EN PREPARATION</div>
+                        </div>
+            
+                    </div>
+       
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="col-md-11,4 p-4 mb-3 text-center" *ngIf="selectedClientFournisseur.nom">
+                    <img [src]="selectedClientFournisseur.photo ? selectedClientFournisseur.photo : 'assets/product.png'" class="rounded-circle" width="100px" height="100px">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col mb-3 col-md-11,4 p-4" style="max-height: 200px; overflow-y: scroll">
+        <div class="row mt-2 p-3 custom-border">
+            <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Code article" [(ngModel)]="codeArticle" (input)="filterArticle()">
+                    <div *ngIf="codeArticle.length && !articleNotYetSelected" class="autocomplete shadow p-3 mb-5 bg-white rounded">
+                        <p class="p-1" *ngFor="let article of listArticle"
+                            (click)="selectArticle(article)">
+                            {{ article.codeArticle }}&nbsp; {{ article.designation }}</p>
+                    </div>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Quantite" [(ngModel)]="quantite">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Prix Unitaire" [(ngModel)]="searchedArticle.prixUnitaireTtc">
+                </div>
+                <div class="col-md-12 text p-2 text-center">
+                    <button type="button" class="btn btn-success"(click)=ajouterLigneCommande()><i class="fa fa-plus"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-2 p-3 custom-border">
+            <app-detail-cmd *ngFor="let ligne of lignesCommande"
+                [ligneCommande]="ligne"></app-detail-cmd>
+        </div>
+
+        <div class="row mt-2 p-3 custom-border">
+            <div class="col-md-12 text-right">
+                <h4>
+                    Tatale de la commande: {{ totaleCommande }}&nbsp;€
+                </h4>
+            </div>
+        </div>
+
+        <div class="col-md-12 text-center mt-2">
+            <button class="btn btn-danger mr-3" (click)="cancelClick()">
+            <i class="fa-solid fa-ban"></i>&nbsp;
+                Annuler
+            </button>
+            &nbsp;
+            <button class="btn btn-primary" (click)="enregistrerCommande()">
+            <i class="fa-solid fa-save"></i>&nbsp;
+                Enregistrer
+            </button>
+        </div>
+    </div>

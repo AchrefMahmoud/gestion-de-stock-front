@@ -1,0 +1,38 @@
+<div class="row m-3">
+    <div class="card col-md-4 text-center mr-3">
+        <div class="col">
+            <div class="mb-3 mt-3">
+                <img [src]="connectedUser.photo ? connectedUser.photo : 'assets/cadna.png'" class="rounded-circle" width="230px" height="200px">
+            </div>
+            <div class="mb-3">
+                <h2>{{connectedUser.nom}}</h2>
+                <small class="from-text-muted">Adresse, Ville, 1234</small>
+            </div>
+        </div>
+    </div>
+    <div class="card col-md-8">
+        <form class="m-4">
+            <div class="form-group mb-3">
+              <input type="email" class="form-control" name="ancienMotDePasse" placeholder="Acien mot de passe" [(ngModel)]="ancienMotDePasse">
+            </div>
+            <div class="form-group mb-3">
+              <input type="password" class="form-control" name="nouveaumotdepasse" placeholder="Nouveau mot de passe" [(ngModel)]="changerMotDePasseDto.motDePasse">
+            </div>
+            <div class="form-group mb-3">
+                <input type="password" class="form-control" name="confirmmotpasse" placeholder="Confirmer mot de passe" [(ngModel)]="changerMotDePasseDto.confirmMotDePasse">
+            </div>
+          </form>
+
+          <div class="ol-md-12 text-center">
+            <button class="btn btn-danger" (click)="cancelClick()">
+                <i class="fa-solid fa-ban"></i>&nbsp;
+                Annuler
+            </button>
+            &nbsp;
+            <button class="btn btn-primary" (click)="changerMotDePasseUtilisateur()">
+                <i class="fa-solid fa-save"></i>&nbsp;
+                Enregistrer
+            </button>
+        </div>
+    </div>
+</div>
