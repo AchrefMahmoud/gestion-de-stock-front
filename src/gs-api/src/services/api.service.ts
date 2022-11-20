@@ -916,10 +916,10 @@ class ApiService extends __BaseService {
   /**
    * @return successful operation
    */
-  sortieStockResponse(): __Observable<__StrictHttpResponse<MouvementStockDto>> {
+  sortieStockResponse(mvt: MouvementStockDto): __Observable<__StrictHttpResponse<MouvementStockDto>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
-    let __body: any = null;
+    let __body: any = mvt;
     let req = new HttpRequest<any>(
       'POST',
       this.rootUrl + `/gestiondestock/v1/mvtstk/sortie`,
@@ -940,8 +940,8 @@ class ApiService extends __BaseService {
   /**
    * @return successful operation
    */
-  sortieStock(): __Observable<MouvementStockDto> {
-    return this.sortieStockResponse().pipe(
+  sortieStock(mvt: MouvementStockDto): __Observable<MouvementStockDto> {
+    return this.sortieStockResponse(mvt).pipe(
       __map(_r => _r.body as MouvementStockDto)
     );
   }

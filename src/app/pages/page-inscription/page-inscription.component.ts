@@ -31,7 +31,7 @@ export class PageInscriptionComponent implements OnInit {
       Swal.fire({
         icon: 'success',
         title: 'Votre compte a été créer avec succes',
-        showConfirmButton: false,
+        showConfirmButton: true,
         timer: 2000
       });
       this.connectEntreprise();

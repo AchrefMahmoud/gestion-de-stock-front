@@ -5,6 +5,7 @@ import { AuthenticationRequest, AuthenticationResponse } from 'src/gs-api/src/mo
 import Swal from 'sweetalert2';
 
 
+
 @Component({
   selector: 'app-page-login',
   templateUrl: './page-login.component.html',
@@ -30,8 +31,9 @@ export class PageLoginComponent implements OnInit {
       this.getUserByEmail();
       Swal.fire({
         icon: 'success',
-        showConfirmButton: false,
-        timer: 1500
+        title: 'Vous êtes connecté avec succès',
+        showConfirmButton: true,
+        timer: 2000,
       })
       this.router.navigate(['home']);
     },

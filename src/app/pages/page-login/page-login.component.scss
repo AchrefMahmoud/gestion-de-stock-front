@@ -1,5 +1,5 @@
 .container {
-  max-width: 500px;
+  max-width: 900px;
   margin-top: 10%;
 }
 
@@ -24,3 +24,30 @@
   border-top-right-radius: 20px;
   z-index: -1;
 }
+
+
+.content{
+  width: 300;
+  height: auto;
+  margin: auto;
+  color: #fff;
+}
+
+
+
+
+.Swal-fire {
+  background-color: rgba(0,0,0,0.651);
+  color: #fff;
+}
+
+.Swal-title {
+  color: #fff;
+  font-size: 20px;
+}
+
+.Swal-text {
+  color: #fff;
+  font-size: 15px;
+}
+
